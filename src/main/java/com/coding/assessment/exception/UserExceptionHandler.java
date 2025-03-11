@@ -22,4 +22,8 @@ public class UserExceptionHandler {
         }
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(UserServiceException.class)
+    public ResponseEntity<String> handleUserServiceException(UserServiceException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }

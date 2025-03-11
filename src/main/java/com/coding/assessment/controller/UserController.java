@@ -17,14 +17,14 @@ public class UserController {
     @Autowired
     private UserService userService;
     @PostMapping(value="/register")
-    public ResponseEntity<String> addCustomer(@Valid @RequestBody UserDTO userDTO,
+    public ResponseEntity<String> registerUser(@Valid @RequestBody UserDTO userDTO,
                                               @RequestParam(value = "userType", defaultValue = "Regular") String userType) throws UserServiceException {
         userDTO.setUserType(userType);
         Integer id = userService.registerUser(userDTO);
         return new ResponseEntity<>(UserConstants.CONTROLLER_REGISTRATION_SUCCESS + id, HttpStatus.CREATED);
     }
     @GetMapping(value="/{user_id}")
-    public ResponseEntity<UserDTO> getCustomer(@PathVariable int user_id) throws UserServiceException{
+    public ResponseEntity<UserDTO> getUserDetails(@PathVariable int user_id) throws UserServiceException{
         return new ResponseEntity<>(userService.getUserDetails(user_id),HttpStatus.OK);
     }
 }
