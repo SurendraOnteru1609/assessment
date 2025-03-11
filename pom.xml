@@ -12,7 +12,7 @@
 	<artifactId>assessment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>assessment</name>
-	<description>Project with Java 11</description>
+	<description>Assessment Project</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -84,6 +84,10 @@
 		</plugins>
 	</build>
 	<repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
