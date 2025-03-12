@@ -5,6 +5,6 @@ import com.coding.assessment.dto.UserDTO;
 import com.coding.assessment.exception.UserServiceException;
 
 public interface UserService {
-    public Integer registerUser(UserDTO userDTO);
+    public Integer registerUser(UserDTO userDTO) throws UserServiceException;
     public UserDTO getUserDetails(Integer userId) throws UserServiceException;
 }

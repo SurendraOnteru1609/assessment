@@ -43,7 +43,7 @@ class UserServiceImplTest {
     }
 
     @Test
-    void testRegisterUser_Success() {
+    void testRegisterUser_Success() throws UserServiceException {
         when(userRepository.save(any(User.class))).thenReturn(user);
         Integer userId = userService.registerUser(userDTO);
         assertNotNull(userId);
